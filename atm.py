@@ -110,6 +110,8 @@ divisibleByFive = bool(True);
 #In elementary maths this is known as the remainder from a division.
 if userWithdrawl % 5 == 0:
    print("Please collect your bills as follows:");
+   hundredDispense(num = userWithdrawl);
+   
 
 else:  
    divisibleByFive = False;
