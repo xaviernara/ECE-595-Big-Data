@@ -7,96 +7,102 @@
 
 
 userWithdrawl = int(input("Enter the amount for withdrawal: "));
-#remainder = 0 
 
 #dispenes hundread dollar bills
 def hundredDispense(num):
+#if the remainder of the amount is divisble by 50,20,10, or 5 after its been divided by 100 
+#then its sent to the corresponding function that dispenses that amount
+#EX:150/100 = 1 R 50
 
    hundredDispensing= int(num/100);
    print ("$100:",hundredDispensing);
    remainder = num%100
    
    if num % 50 == 0:
-     #print("1st remainder: ",remainder);
      fiftyDispense(num=remainder);
      
    elif num % 20 == 0:
-      #print("2nd remainder: ",remainder);
       twentyDispense(num=remainder);
     
    elif num % 10 == 0:
-      #print("2nd remainder: ",remainder);
       tenDispense(num=remainder);
 
    elif num % 5 == 0:
-      #print("2nd remainder: ",remainder);
       twentyDispense(num=remainder);
    else:
          print("Transaction complete.")
-         break
+         
     
 
 #dispenes fifty dollar bills
 def fiftyDispense(num):
+#if the remainder of the amount is divisble by 20,10, or 5 after its been divided by 50 
+#then its sent to the corresponding function that dispenses that amount
+#EX:55/50 = 1 R 5
 
    fiftyDispensing= int(num/50);
    print ("$50:",fiftyDispensing);
    remainder = num%50
    
    if num % 20 == 0:
-      #print("2nd remainder: ",remainder);
       twentyDispense(num=remainder);
           
    elif num % 10 == 0:
-      #print("2nd remainder: ",remainder);
       tenDispense(num=remainder);
       
    elif num % 5 == 0:
-      #print("2nd remainder: ",remainder);
       twentyDispense(num=remainder);
    else:
        print("Transaction complete.")
-       break
+       
 
 
 #dispenes twenty dollar bills      
 def twentyDispense(num):
+#if the remainder of the amount is divisble by 10 or 5 after its been divided by 20 
+#then its sent to the corresponding function that dispenses that amount
+#EX:45/20 = 2 R 5
 
    twentyDispensing= int(num/20);
    print ("$20:",twentyDispensing);
    remainder = num%20
    
    if num % 10 == 0:
-      #print("2nd remainder: ",remainder);
       tenDispense(num=remainder);
               
-   if num % 5 == 0:
-      #print("2nd remainder: ",remainder);
+   elif num % 5 == 0:
       twentyDispense(num=remainder);
    else:
        print("Transaction complete.")
-       break
+      
 
 #dispenes 10 dollar bills
 def tenDispense(num):
+#if the remainder of the amount is divisble by 5 after its been divided by 10 
+#then its sent to the corresponding function that dispenses that amount
+#EX:15/10 = 1 R 5
 
    tenDispensing= int(num/10);
    print ("$10:",tenDispensing);
    remainder = num%10
    
    if num % 5 == 0:
-      #print("2nd remainder: ",remainder);
       fiveDispense(num=remainder);
    else:
          print("Transaction complete.")
-         break
+        
 
 #dispenes five dollar bills
 def fiveDispense(num):
+#if the remainder of the amount is still divisble by 5 after its been divided by the previous functions  
+#then its dispenses that amount in 5's
+#EX:15/10 = 1 R 5
+
    fiveDispensing= int(num/5);
    print ("$5:",fiveDispensing);
    print("Transaction complete.");
-   break
+   
+   
 
 
 divisibleByFive = bool(True);
@@ -104,7 +110,6 @@ divisibleByFive = bool(True);
 #In elementary maths this is known as the remainder from a division.
 if userWithdrawl % 5 == 0:
    print("Please collect your bills as follows:");
-   hundredDispense(num=userWithdrawl)
 
 else:  
    divisibleByFive = False;
@@ -112,52 +117,5 @@ else:
 
 
    
-while divisibleByFive:
-    if userWithdrawl % 100 == 0:
-         hundreadDispense= int(userWithdrawl/100);
-         remainder = userWithdrawl%100
-         print ("$100:",hundreadDispense);
-         print("remainder",remainder);
-         break;
-         
-   
-   
-      #hundredmoneyback = userWithdrawl// hundred;
-      #hundredpartialtotal = userWithdrawl - hundredmoneyback * hundred;
-            
-      #fiftymoneyback = hundredpartialtotal // fifty;
-      #fiftypartialtotal = hundredpartialtotal - fiftymoneyback * fifty;
-      
-      #twentymoneyback = fiftypartialtotal // twenty;
-      #twentypartialtotal = fiftypartialtotal - twentymoneyback * twenty;
-      
-      #tenmoneyback = twentypartialtotal // ten;
-      #tenpartialtotal = twentypartialtotal - tenmoneyback * ten;
-      
-      #fivemoneyback = twentypartialtotal // five;
-      #fivepartialtotal = twentypartialtotal - fivemoneyback * five;
-
-      
-      
-      #print "$100: %s, $50: %s, $20: %s,  $10: %s,  $5: %s." % (hundredpartialtotal, fiftymoneyback, twentymoneyback,tenmoneyback,fivemoneyback)
-      #print ("$100:",hundredpartialtotal);
-      #print ("$50:",fiftymoneyback);
-      #print("$20:",twentymoneyback);
-      #print("$10:",tenmoneyback);
-      #print(" $5:",fivemoneyback);
-      
-      #break;
-        
-else:  
-   divisibleByFive = False;
-   print ("The amount ", userWithdrawl , "cannot be withdrawn." );
 
 
-#if userWithdrawl % 100 == 0:
-#   print("100 divisible");
-
-#elif userWithdrawl % 20 == 0:
-#   print("20 divisible");
-
-
-#print(userWithdrawl);
